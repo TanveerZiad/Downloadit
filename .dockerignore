@@ -1,0 +1,7 @@
+target
+work
+outputs
+.git
+.env
+data
+web/pkg

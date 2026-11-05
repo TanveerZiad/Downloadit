@@ -1,0 +1,42 @@
+services:
+  downloadit:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      ADDR: ":8080"
+      DATABASE_PATH: /data/downloads.db
+      DOWNLOAD_DIR: /data/files
+      CLAMD_ADDRESS: clamd:3310
+    volumes:
+      - downloadit-data:/data
+    restart: unless-stopped
+    read_only: true
+    tmpfs:
+      - /tmp:size=32m,mode=1777
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    depends_on:
+      clamd:
+        condition: service_healthy
+
+  clamd:
+    image: clamav/clamav:stable
+    restart: unless-stopped
+    expose:
+      - "3310"
+    volumes:
+      - ./clamd.conf:/etc/clamav/clamd.conf:ro
+      - clamav-data:/var/lib/clamav
+    healthcheck:
+      test: ["CMD-SHELL", "clamdscan --ping 1 || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+volumes:
+  downloadit-data:
+  clamav-data:

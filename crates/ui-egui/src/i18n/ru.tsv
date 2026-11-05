@@ -1,0 +1,276 @@
+# DownloadCraft interface strings: Russian (русский).
+# context<TAB>English<TAB>translation; escapes \n \t \\. Placeholders like {name} stay as they are.
+# Written for DownloadCraft from the meaning of the English (clean room): no wording is taken from
+# other download managers.
+
+	1 download	1 загрузка
+	1 download running	Идёт 1 загрузка
+	1 link	1 ссылка
+	A .dat or .p2p file, or empty for none	Файл .dat или .p2p, пусто — без фильтра
+	About	О программе
+	Add a link (Ctrl+N), or paste one anywhere (Ctrl+V)	Добавьте ссылку (Ctrl+N) или вставьте её в любом месте (Ctrl+V)
+	Add download	Добавить загрузку
+	Add link	Добавить ссылку
+	Add {n} downloads	Добавить загрузки: {n}
+	Added {n} downloads	Добавлено загрузок: {n}
+	Address	Адрес
+	All downloads	Все загрузки
+	Also delete the file (it goes to the Recycle Bin)	Удалить и файл (он попадёт в корзину)
+	Also delete the file (it goes to the Trash)	Удалить и файл (он попадёт в корзину)
+	Answering	Отвечает
+	Appearance	Внешний вид
+	Asking the router to forward the port…	Просим роутер пробросить порт…
+	Audio only	Только звук
+	Best	Лучшее
+	Best available	Лучшее из доступного
+	Browse	Обзор
+	Can't be asked about the swarm	У него нельзя узнать о рое
+	Cancel	Отмена
+	Changed settings apply once no torrent is running.	Изменённые настройки вступят в силу, когда не будет запущенных торрентов.
+	Changes apply when you save.	Изменения вступят в силу после сохранения.
+	Check again	Проверить снова
+	Check for updates	Проверить обновления
+	Checking for updates…	Проверка обновлений…
+	Checking the link…	Проверка ссылки…
+	Choose a folder	Выберите папку
+	Clear	Очистить
+	Clear completed	Убрать завершённые
+	Close (Esc)	Закрыть (Esc)
+	Completed	Завершённые
+	Connect to peers over	Соединяться с пирами по
+	Connecting…	Подключение…
+	Connection	Соединение
+	Connections	Соединения
+	Connections per download	Соединений на загрузку
+	Copied	Скопировано
+	Copy	Копировать
+	Copy link	Копировать ссылку
+	Couldn't check: {why}	Не удалось проверить: {why}
+	Ctrl+Enter adds	Ctrl+Enter добавляет
+	DHT (peers found without a tracker)	DHT (пиры без трекера)
+	DHT off	DHT выключен
+	DHT: {n} nodes	DHT: узлов {n}
+	Dark	Тёмная
+	Deleted	Удалён
+	Deleted or moved  ·  Download again fetches it once more	Удалён или перемещён  ·  «Скачать снова» загрузит его ещё раз
+	Direct link	Прямая ссылка
+	Direct link · size not given	Прямая ссылка · размер не указан
+	Direct link · {size}	Прямая ссылка · {size}
+	Download	Загрузка
+	Download again	Скачать снова
+	Download and install	Загрузить и установить
+	Download and upload over all torrents, in KiB/s. 0: no limit.	Загрузка и отдача по всем торрентам, в КиБ/с. 0 — без ограничения.
+	Download folder	Папка загрузок
+	Download limit	Ограничение загрузки
+	Download speed	Скорость загрузки
+	Download this file before the others	Загрузить этот файл раньше остальных
+	DownloadCraft is up to date.	DownloadCraft обновлён.
+	DownloadCraft keeps itself up to date. When a new version is ready, a bar at the top lets you restart to install it.	DownloadCraft обновляется сам. Когда новая версия готова, панель вверху предложит перезапустить программу, чтобы её установить.
+	DownloadCraft {version} is available.	Доступна версия DownloadCraft {version}.
+	DownloadCraft {version} is ready to install.	DownloadCraft {version} готов к установке.
+	DownloadCraft {version} is ready.	DownloadCraft {version} готов.
+	Downloaded	Загружено
+	Downloading	Загружаются
+	Downloading DownloadCraft {version}	Загрузка DownloadCraft {version}
+	Downloading DownloadCraft {version}: {percent}%	Загрузка DownloadCraft {version}: {percent}%
+	Downloading DownloadCraft {version}…	Загрузка DownloadCraft {version}…
+	Downloads	Загрузки
+	Downloads at once	Загрузок одновременно
+	Downloads in this category show up here.	Здесь появляются загрузки этой категории.
+	FTP	FTP
+	FTP downloads arrive in v0.5	загрузки по FTP появятся в v0.5
+	Failed	С ошибкой
+	Files	Файлы
+	Files, video pages, torrents and magnet links download now · MEGA and FTP are on the way	Файлы, страницы с видео, торренты и magnet-ссылки уже загружаются · MEGA и FTP появятся позже
+	Filter files	Фильтр файлов
+	Finished	Завершено
+	First	Сначала
+	Follows your computer's language unless you pick one.	Язык компьютера, если вы не выберете другой.
+	Forward the port on the router (NAT-PMP or UPnP)	Пробрасывать порт на роутере (NAT-PMP или UPnP)
+	Free and open source, under the MIT or Apache-2.0 licence.	Свободная программа с открытым кодом, по лицензии MIT или Apache-2.0.
+	General	Общее
+	Get Deno	Получить Deno
+	Get FFmpeg	Получить FFmpeg
+	Get yt-dlp	Получить yt-dlp
+	Getting it and checking it…	Загрузка и проверка…
+	Getting the torrent's details…	Получение сведений о торренте…
+	Hide details	Скрыть подробности
+	Higher qualities come as separate video and sound, which FFmpeg joins into one file.	Высокое качество приходит отдельными видео и звуком, которые FFmpeg соединяет в один файл.
+	Higher qualities need FFmpeg to join video and sound. Install it with brew install ffmpeg (macOS) or sudo apt install ffmpeg (Linux).	Для высокого качества нужен FFmpeg, чтобы соединить видео и звук. Установите его командой brew install ffmpeg (macOS) или sudo apt install ffmpeg (Linux).
+	IP filter	IP-фильтр
+	Info hash	Инфо-хеш
+	It comes off the list.	Она уйдёт из списка.
+	It's checked once it's here, then DownloadCraft restarts into it.	После загрузки она проверяется, и DownloadCraft перезапускается с ней.
+	Language	Язык
+	Languages to save with videos, such as en, es. Empty: none.	Языки субтитров для видео, например en, ru. Пусто: без субтитров.
+	Later	Позже
+	Light	Светлая
+	Link copied	Ссылка скопирована
+	Links	Ссылки
+	Local peers (on this network)	Локальные пиры (в этой сети)
+	Looking for people sharing it…	Поиск тех, кто его раздаёт…
+	MEGA	MEGA
+	MEGA links arrive in v0.6	ссылки MEGA появятся в v0.6
+	Magnet link	Magnet-ссылка
+	No downloads yet	Загрузок пока нет
+	No matches	Ничего не найдено
+	No one connected yet · {connecting} connecting · {known} known	Пока никого · соединяются: {connecting} · известно: {known}
+	Not answering: {why}	Не отвечает: {why}
+	Not asked yet	Ещё не спрашивали
+	Nothing downloading	Ничего не загружается
+	Nothing here	Здесь пусто
+	Nothing in this list has that name or link.	В этом списке нет такого имени или ссылки.
+	Off	Выкл.
+	On	Вкл.
+	On · {n} nodes	Вкл. · узлов {n}
+	One file with sound	Один файл со звуком
+	Open	Открыть
+	Open a torrent file…	Открыть торрент-файл…
+	Open folder	Открыть папку
+	Others reach this computer on it. 0: a new one each start.	По нему другие связываются с этим компьютером. 0 — новый при каждом запуске.
+	Parts of one file fetched at the same time, when the server allows.	Части одного файла, загружаемые одновременно, если сервер позволяет.
+	Paste a link anywhere in this window with Ctrl+V, or add one.	Вставьте ссылку в любом месте окна через Ctrl+V или добавьте её.
+	Paste one link per line: files, video pages such as YouTube, or torrents.	По одной ссылке в строке: файлы, страницы с видео, например YouTube, или торренты.
+	Pause	Приостановить
+	Pause (Space)	Приостановить (Пробел)
+	Pause all	Приостановить все
+	Paused	На паузе
+	Peer exchange (peers tell each other)	Обмен пирами (пиры сообщают друг о друге)
+	Peers	Пиры
+	Peers are reached through the proxy.	Пиры доступны через прокси.
+	Peers per torrent	Пиров на торрент
+	Pick all	Выбрать все
+	Pick none	Снять выбор
+	Pieces	Части
+	Playlist · 1 video	Плейлист · 1 видео
+	Playlist · no videos that can be added	Плейлист · нет видео, которые можно добавить
+	Playlist · {n} videos	Плейлист · видео: {n}
+	Port for incoming connections	Порт для входящих соединений
+	Program	Программа
+	Queued	В очереди
+	Random	Случайный
+	Received	Получено
+	Remove	Убрать
+	Remove (Delete)	Убрать (Delete)
+	Remove and delete	Убрать и удалить
+	Remove download?	Убрать загрузку?
+	Remove from the list (Delete)	Убрать из списка (Delete)
+	Remove…	Убрать…
+	Restart and install	Перезапустить и установить
+	Restart now	Перезапустить сейчас
+	Restart now to install it, or it installs when you close DownloadCraft. Downloads pause and carry on after.	Перезапустите сейчас, чтобы установить, или она установится при закрытии DownloadCraft. Загрузки приостановятся и потом продолжатся.
+	Restart to update	Перезапустите для обновления
+	Resume	Продолжить
+	Resume (Space)	Продолжить (Пробел)
+	Resume all	Продолжить все
+	SOCKS5 proxy for peers and web trackers	SOCKS5-прокси для пиров и веб-трекеров
+	Same as the system	Как в системе
+	Save	Сохранить
+	Save to	Сохранить в
+	Saved in {folder}	Сохранено в {folder}
+	Search downloads  (Ctrl+F)	Поиск загрузок  (Ctrl+F)
+	Sent	Отдано
+	Settings	Настройки
+	Share finished torrents	Раздавать готовые торренты
+	Share ratio	Рейтинг раздачи
+	Sharing · {sent} sent	Раздаётся · отправлено {sent}
+	Show details	Показать подробности
+	Show in folder	Показать в папке
+	Source	Источник
+	Speed	Скорость
+	Speed limits	Ограничения скорости
+	Start downloading now	Начать загрузку сразу
+	Status	Состояние
+	Subtitles	Субтитры
+	Swarm	Рой
+	System	Системная
+	System follows your computer.	«Системная» следует за вашим компьютером.
+	TCP	TCP
+	TCP and µTP	TCP и µTP
+	The DHT, UDP trackers and .torrent links still connect directly, and web trackers' names are looked up directly; web seeds aren't used.	DHT, UDP-трекеры и ссылки на .torrent по-прежнему соединяются напрямую, а имена веб-трекеров разрешаются напрямую; веб-сиды не используются.
+	The IP filter blocks {n} ranges.	IP-фильтр блокирует диапазонов: {n}.
+	The most one torrent connects to at once. 0: no limit.	Сколько пиров торрент может держать одновременно. 0 — без ограничения.
+	The part downloaded so far is deleted.	Уже загруженная часть удаляется.
+	The port, peers, proxy and IP filter apply once no torrent is running.	Порт, пиры, прокси и IP-фильтр вступят в силу, когда не будет запущенных торрентов.
+	The rest wait in the queue.	Остальные ждут в очереди.
+	The router didn't forward the port: {why}	Роутер не пробросил порт: {why}
+	The router forwards the port ({how}), so peers can connect in.	Роутер пробрасывает порт ({how}), пиры могут подключаться.
+	Theme	Тема
+	Theme: Dark. Click for System	Тема: тёмная. Нажмите для системной
+	Theme: Light. Click for Dark	Тема: светлая. Нажмите для тёмной
+	Theme: System. Click for Light	Тема: системная. Нажмите для светлой
+	These show while it's downloading or sharing.	Это видно, пока он загружается или раздаётся.
+	This copy is updated by the package manager it came from, or it's a build of its own.	Эта копия обновляется через менеджер пакетов, из которого она установлена, или это собственная сборка.
+	This run	За этот запуск
+	This torrent's limits (KiB/s, 0: none)	Ограничения этого торрента (КиБ/с, 0 — без ограничения)
+	Time active	Время работы
+	Time left	Осталось
+	Torrent	Торрент
+	Torrent · {n} files · {size}	Торрент · файлов: {n} · {size}
+	Torrent · {size}	Торрент · {size}
+	Torrents	Торренты
+	Torrents: peers are found through trackers, the DHT and each other.	Торренты: пиры находятся через трекеры, DHT и друг через друга.
+	Trackers	Трекеры
+	Try again	Повторить
+	Until each has sent this many times its size. 0: not at all.	Пока каждый не отдаст столько своих размеров, сколько указано. 0 — не раздавать.
+	Up to 1080p	До 1080p
+	Up to 480p	До 480p
+	Up to 720p	До 720p
+	Updates	Обновления
+	Updates are turned off for this run.	Обновления отключены для этого запуска.
+	Upload	Отдача
+	Upload limit	Ограничение отдачи
+	Upload speed	Скорость отдачи
+	Video	Видео
+	Video links use yt-dlp, a free, open-source program that finds the video in a page. DownloadCraft fetches its official build and checks it before use.	Для ссылок на видео нужен yt-dlp — свободная программа с открытым кодом, которая находит видео на странице. DownloadCraft загружает её официальную сборку и проверяет её перед использованием.
+	Video page	Страница с видео
+	Video page · needs yt-dlp (below)	Страница с видео · нужен yt-dlp (ниже)
+	Video · {quality}	Видео · {quality}
+	Videos	Видео
+	Waiting for a free slot	Ждёт свободного места
+	Wasted	Впустую
+	Web seed: {url}	Веб-сид: {url}
+	With all of it	Со всем
+	YouTube also needs Deno (deno.com) for every quality; install it to get them.	Для всех качеств YouTube нужен ещё и Deno (deno.com); установите его, чтобы их получить.
+	YouTube also needs Deno, a free JavaScript runtime yt-dlp reads its pages with; without it some qualities are missing. DownloadCraft fetches its official build and checks it before use.	Для YouTube нужен ещё и Deno — свободная среда JavaScript, через которую yt-dlp читает его страницы; без неё некоторых качеств не будет. DownloadCraft загружает его официальную сборку и проверяет её перед использованием.
+	a proxy with a password isn't supported yet	прокси с паролем пока не поддерживается
+	from a web seed	с веб-сида
+	from its next start	со следующего запуска
+	host:port, or empty for none	хост:порт, пусто — без прокси
+	none	нет
+	not known yet	пока неизвестно
+	not used while a download speed limit is set	не используется, пока задано ограничение загрузки
+	not used while a proxy is set	не используется, пока задан прокси
+	one per line	по одной в строке
+	port {port}	порт {port}
+	starts over when resumed	начнётся заново при продолжении
+	the proxy's host isn't a name or an address	хост прокси — не имя и не адрес
+	the proxy's port is a number from 1 to 65535	порт прокси — число от 1 до 65535
+	write the proxy as host:port	запишите прокси как хост:порт
+	{connecting} connecting · {known} known	соединяются: {connecting} · известно: {known}
+	{done} of {total}	{done} из {total}
+	{down} received · {up} sent	получено {down} · отдано {up}
+	{have} of {size}	{have} из {size}
+	{name}: {picked} of {n} files · {size}	{name}: выбрано {picked} из {n} · {size}
+	{n} (up to {max})	{n} (до {max})
+	{n} connected · {speed}	соединено: {n} · {speed}
+	{n} connections	соединений: {n}
+	{n} downloads	Загрузок: {n}
+	{n} downloads running	Идёт загрузок: {n}
+	{n} files	файлов: {n}
+	{n} in the list · {connections} connections each	В списке: {n} · по {connections} соединений
+	{n} links	Ссылок: {n}
+	{n} × {size}	{n} × {size}
+	{picked} of {n} files picked	выбрано файлов: {picked} из {n}
+	{quality}  ·  needs FFmpeg	{quality}  ·  нужен FFmpeg
+	{seeds} have it all · {peers} downloading	всё у {seeds} · загружают {peers}
+	{time} (sharing for {sharing})	{time} (раздаётся {sharing})
+	{time} left	осталось {time}
+	µTP is easier on a busy network; through a proxy only TCP is used.	µTP бережнее к загруженной сети; через прокси используется только TCP.
+
+# One download's state, beside the category of the same English name.
+state	Queued	В очереди
+state	Downloading	Загружается
+state	Paused	На паузе
+state	Completed	Завершена
+state	Failed	Ошибка

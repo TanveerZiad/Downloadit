@@ -1,0 +1,39 @@
+[package]
+name = "downloadcraft-net"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+description = "DownloadCraft network layer: HTTP(S) transfers with resume, and the worker threads that run the engine's jobs (native only)"
+
+[lints]
+workspace = true
+
+[dependencies]
+downloadcraft-model = { workspace = true }
+ureq = { workspace = true }
+# GitHub's release list, for the test builds' updater.
+serde_json = { workspace = true }
+# SHA-256 of a downloaded update (already rustls's crypto provider).
+ring = "0.17"
+# Removed files go to the Recycle Bin or Trash rather than vanishing (MIT).
+trash = "5"
+# Unpacking FFmpeg's Windows build for video downloads (MIT): reading only, pure-Rust deflate.
+zip = { version = "9", default-features = false, features = ["deflate-flate2-zlib-rs"] }
+# Free space on the disk a download goes to (MIT OR Apache-2.0).
+fs4 = { version = "1", default-features = false }
+log = { workspace = true }
+thiserror = { workspace = true }
+
+# Torrents, everywhere but FreeBSD: librqbit-dualstack-sockets 0.7 (through librqbit) asks socket2
+# for `bind_device`, which FreeBSD hasn't got, so it doesn't build there (src/torrent_off.rs).
+[target.'cfg(not(target_os = "freebsd"))'.dependencies]
+# Torrents and magnet links (BEP 3, 5, 9, 10): rqbit's engine (Apache-2.0), on rustls like the rest.
+librqbit = { version = "9", default-features = false, features = ["rust-tls"] }
+tokio = { version = "1", features = ["rt-multi-thread"] }
+anyhow = "1"
+# Gzipped IP filter files (already here through `zip`).
+flate2 = { version = "1", default-features = false, features = ["zlib-rs"] }
+# The router search goes out the network adapter the default route uses (already here through
+# tokio; MIT OR Apache-2.0).
+socket2 = "0.6"

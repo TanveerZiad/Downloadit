@@ -1,0 +1,13 @@
+/target
+/target-*/
+/dist
+plan/
+*.tmp*
+.DS_Store
+/.claude/
+/result
+/result-*
+data/
+tools/
+*.bin
+

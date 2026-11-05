@@ -1,0 +1,10 @@
+{
+  "name": "downloadit",
+  "version": "1.0.0",
+  "description": "Downloadit — modern, minimal web download manager",
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/dev.js",
+    "build": "node scripts/prepare.js"
+  }
+}

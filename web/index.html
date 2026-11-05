@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#0b0e14"><meta name="description" content="A simple download manager for direct links to any file type.">
+  <title>Downloadit — Your downloads, in one place</title>
+  <script>
+    try {
+      const savedTheme = localStorage.getItem("downloadit-theme") || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+      document.documentElement.setAttribute("data-theme", savedTheme);
+      document.querySelector('meta[name="theme-color"]')?.setAttribute('content', savedTheme === 'light' ? '#f8fafc' : '#0b0e14');
+      document.querySelector('meta[name="color-scheme"]')?.setAttribute('content', savedTheme);
+    } catch(e){}
+  </script>
+  <link rel="stylesheet" href="/css/style.css?v=20261105d">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="Downloadit home"><span class="brand-mark">↓</span><span>downloadit<span class="brand-dot">.</span></span></a>
+    <div class="topbar-right">
+      <span class="connection"><i></i> Local &amp; private</span>
+      <button class="icon-button" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme (Light / Dark)">
+        <svg class="theme-icon-sun hidden" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="theme-icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <button class="icon-button" id="settings-open" aria-label="Settings" title="Settings">⚙</button>
+      <div class="avatar">D</div>
+    </div>
+  </header>
+  <main class="shell" id="home">
+    <section class="hero"><div class="eyebrow"><span class="sparkle">✳</span> THE SIMPLE DOWNLOAD MANAGER</div><h1>Any file.<br><span>One simple download.</span></h1><p>Paste a direct link to a document, archive, image, installer, or other file.</p>
+      <form class="url-form" id="analyze-form"><div class="input-wrap"><span class="link-icon">↗</span><input id="url-input" type="url" placeholder="Paste any direct file URL…" required autocomplete="url" aria-label="Direct file URL"><button type="button" class="paste-button" id="paste-button">Paste <kbd>⌘ V</kbd></button></div><button class="analyze-button" type="submit"><span>Check link</span><span>→</span></button><button type="button" class="folder-select-button" id="hero-folder-button" title="Choose save location" aria-label="Choose save location"><svg class="folder-svg-icon" viewBox="0 0 512 512" width="22" height="22" fill="currentColor"><path d="M 39.0,53.0 L 167.0,53.0 L 178.0,55.0 L 197.0,65.0 L 230.0,103.0 L 240.0,107.0 L 417.0,108.0 L 432.0,116.0 L 442.0,128.0 L 447.0,143.0 L 447.0,159.0 L 169.0,159.0 L 155.0,162.0 L 140.0,169.0 L 122.0,185.0 L 112.0,202.0 L 49.0,418.0 L 45.0,425.0 L 37.0,432.0 L 27.0,436.0 L 16.0,436.0 L 9.0,433.0 L 3.0,427.0 L 0.0,420.0 L 0.0,90.0 L 6.0,73.0 L 16.0,62.0 L 29.0,55.0 L 38.0,54.0 Z M 173.0,181.0 L 482.0,181.0 L 498.0,187.0 L 509.0,201.0 L 511.0,209.0 L 510.0,222.0 L 452.0,421.0 L 444.0,437.0 L 430.0,450.0 L 422.0,454.0 L 406.0,458.0 L 28.0,458.0 L 47.0,452.0 L 53.0,448.0 L 67.0,432.0 L 72.0,420.0 L 132.0,212.0 L 140.0,198.0 L 150.0,189.0 L 166.0,182.0 L 172.0,182.0 Z" fill-rule="evenodd"/></svg><span class="folder-dot-indicator hidden" id="folder-dot"></span></button></form>
+      <div class="privacy"><span>✦</span> No account needed. Supports direct HTTP and HTTPS file links.</div>
+    </section>
+    <section class="analysis card hidden" id="analysis-card"><div class="section-kicker">LINK PREVIEW</div><div class="file-preview"><div class="file-icon">↧</div><div class="file-info"><strong id="analysis-name">File name</strong><span id="analysis-meta">Checking file details…</span></div><span class="file-badge" id="analysis-type">FILE</span></div><div class="video-options hidden" id="video-options"><label for="quality-select" class="video-label">Select Quality / Format</label><select id="quality-select" class="quality-select"></select></div><div class="analysis-actions"><button class="secondary-button" id="cancel-analysis">Cancel</button><button class="primary-button" id="download-button">↓ &nbsp;Download file</button></div></section>
+    <section class="downloads-section">
+      <div class="section-heading">
+        <div>
+          <div class="section-kicker">YOUR DOWNLOADS</div>
+          <h2>Download queue <span class="count" id="job-count">0</span></h2>
+        </div>
+        <div class="heading-actions">
+          <span class="aggregate-speed hidden" id="total-speed">⚡ 0 MB/s</span>
+          <button id="clear-completed" class="text-button">Clear completed</button>
+        </div>
+      </div>
+      <div class="filter-tabs" id="filter-tabs">
+        <button class="filter-tab active" data-filter="all">All <span class="tab-count" id="count-all">0</span></button>
+        <button class="filter-tab" data-filter="active">Active <span class="tab-count" id="count-active">0</span></button>
+        <button class="filter-tab" data-filter="paused">Paused <span class="tab-count" id="count-paused">0</span></button>
+        <button class="filter-tab" data-filter="completed">Completed <span class="tab-count" id="count-completed">0</span></button>
+      </div>
+      <div class="job-list" id="job-list"></div>
+      <div class="empty-state" id="empty-state"><div class="empty-art"><div class="empty-cloud">☁</div><span class="empty-down">↓</span></div><strong>Nothing here yet</strong><p>Your downloads will appear here.<br>Paste a link above to get started.</p></div>
+    </section>
+    <footer><span>DOWNLOADIT <span class="brand-dot">✳</span> BUILT FOR THE THINGS YOU NEED</span><span><span class="footer-dot"></span> All systems go</span></footer>
+  </main>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <dialog class="settings-dialog" id="settings-dialog"><form method="dialog"><div class="dialog-head"><div><div class="section-kicker">PREFERENCES</div><h2>Your settings</h2></div><button class="icon-button close-dialog" aria-label="Close">×</button></div><label class="setting-row"><span><strong>Choose a save location</strong><small>Pick a folder for your downloads when supported.</small></span><input type="checkbox" id="folder-setting"></label><label class="setting-row"><span><strong>Keep download history</strong><small>Save recent downloads on this device.</small></span><input type="checkbox" id="history-setting" checked></label><p class="settings-note">Folder access depends on browser support. Otherwise, files use your browser’s normal download location.</p><button class="primary-button save-settings">Done</button></form></dialog>
+  <script>
+    window.openFolderPicker = async function() {
+      if (typeof window.showDirectoryPicker !== 'function') {
+        const dialog = document.getElementById('settings-dialog');
+        if (dialog && typeof dialog.showModal === 'function') {
+          dialog.showModal();
+        }
+        return { unsupported: true };
+      }
+      try {
+        const handle = await window.showDirectoryPicker();
+        if (window.DownloaditEngine) {
+          window.DownloaditEngine.setFolderHandle(handle);
+        }
+        return { ok: true, name: handle.name, handle: handle };
+      } catch (err) {
+        if (err && err.name === 'AbortError') {
+          return { cancelled: true };
+        }
+        return { error: (err && err.message) ? err.message : String(err) };
+      }
+    };
+
+    (function initTheme() {
+      const toggleBtn = document.getElementById('theme-toggle');
+      const sunIcon = toggleBtn ? toggleBtn.querySelector('.theme-icon-sun') : null;
+      const moonIcon = toggleBtn ? toggleBtn.querySelector('.theme-icon-moon') : null;
+      
+      function applyTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        const metaTheme = document.querySelector('meta[name="theme-color"]');
+        if (metaTheme) metaTheme.setAttribute('content', theme === 'light' ? '#f8fafc' : '#0b0e14');
+        const metaScheme = document.querySelector('meta[name="color-scheme"]');
+        if (metaScheme) metaScheme.setAttribute('content', theme);
+        try { localStorage.setItem('downloadit-theme', theme); } catch(e){}
+        if (sunIcon && moonIcon) {
+          if (theme === 'light') {
+            sunIcon.classList.remove('hidden');
+            moonIcon.classList.add('hidden');
+            toggleBtn.setAttribute('title', 'Switch to Dark Mode');
+          } else {
+            sunIcon.classList.add('hidden');
+            moonIcon.classList.remove('hidden');
+            toggleBtn.setAttribute('title', 'Switch to Light Mode');
+          }
+        }
+      }
+
+      const initial = document.documentElement.getAttribute('data-theme') || 
+        (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+      applyTheme(initial);
+
+      if (toggleBtn) {
+        toggleBtn.addEventListener('click', () => {
+          const current = document.documentElement.getAttribute('data-theme');
+          applyTheme(current === 'light' ? 'dark' : 'light');
+        });
+      }
+
+      window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', (e) => {
+        if (!localStorage.getItem('downloadit-theme')) {
+          applyTheme(e.matches ? 'light' : 'dark');
+        }
+      });
+    })();
+  </script>
+  <script src="/js/client-engine.js?v=20261105e"></script>
+  <script type="module">import init from './pkg/downloadit_web.js?v=20261105d'; init();</script>
+</body></html>
